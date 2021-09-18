@@ -32,9 +32,3 @@ jobs:
       - name: Run a one-line script
         run: dir "$GITHUB_WORKSPACE"
         
-      - name: Setup MSBuild.exe
-        uses: warrenbuckley/Setup-MSBuild@v1
-
-      - name: MSBuild
-        working-directory: src
-        run: msbuild MyProject.csproj
