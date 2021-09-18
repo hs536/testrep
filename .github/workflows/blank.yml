@@ -13,7 +13,6 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -26,6 +25,10 @@ jobs:
           echo "Add other actions to build,"
           echo "test, and deploy your project."
 
+  release:
+    needs: build
+    runs-on: windows-latest
+    steps:
       - name: Run a one-line script
         run: dir "$GITHUB_WORKSPACE"
         
